@@ -1,0 +1,24 @@
+name: Test CI/CD Pipeline
+
+# Trigger the pipeline on push events to any branch
+on:
+  push:
+
+jobs:
+  test-pipeline:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the code from the GitHub repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Print a message to confirm the pipeline runs
+      - name: Print Hello World
+        run: echo "CI/CD pipeline triggered and running!"
+
+      # Step 3: Run a basic test (optional)
+      - name: Run simple test
+        run: |
+          echo "Running a simple script..."
+          echo "This will later be replaced with vulnerability detection."
